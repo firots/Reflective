@@ -13,7 +13,7 @@ class Cannon: SKNode {
     
     static var size: CGSize!
     var foundation: SKSpriteNode!
-    var light: SKLightNode!
+    var light: SKLightNode?
     var barrel: SKSpriteNode!
     var charge = false
     var dragging = -1
@@ -54,10 +54,10 @@ class Cannon: SKNode {
         
         if Settings.shadows == true {
             light = SKLightNode()
-            light.position = CGPoint(x: 0 / 2, y: 0)
-            light.categoryBitMask = 0b0001
-            light.falloff = 2
-            addChild(light)
+            light!.position = CGPoint(x: 0 / 2, y: 0)
+            light!.categoryBitMask = 0b0001
+            light!.falloff = 2
+            addChild(light!)
         }
         
         setScale(GameScene.scale)

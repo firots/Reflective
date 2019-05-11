@@ -12,7 +12,7 @@ import SpriteKit
 class Ball: SKNode {
     
     var base: SKSpriteNode!
-    var light: SKLightNode!
+    var light: SKLightNode?
     var color = Colors.red {
         didSet {
             base.color = color
@@ -37,14 +37,12 @@ class Ball: SKNode {
         
         if Settings.shadows == true {
             light = SKLightNode()
-            light.position = CGPoint(x: 0 / 2, y: 0)
-            light.categoryBitMask = 0b0001
-            light.lightColor = self.color
-            light.falloff = 0.2
-            addChild(light)
+            light!.position = CGPoint(x: 0 / 2, y: 0)
+            light!.categoryBitMask = 0b0001
+            light!.lightColor = self.color
+            light!.falloff = 0.2
+            addChild(light!)
         }
-
-        
         setScale(GameScene.scale * 0.2)
     }
     

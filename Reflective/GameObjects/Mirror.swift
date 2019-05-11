@@ -17,7 +17,6 @@ class Mirror: SKNode {
     var mirrorTop: SKSpriteNode!
     var mirrorBottom: SKSpriteNode!
     var reflector: SKSpriteNode!
-    var dragger: SKSpriteNode!
     var snappedPos: CGPoint?
     var light: SKLightNode?
     var reversed = false
@@ -135,7 +134,7 @@ class Mirror: SKNode {
             }
             else {
                 if position.y > scene.size.width * 1.65 {position.y = scene.size.width * 1.65 }
-                else if position.y < Mirror.size.height / 2 { position.y = Mirror.size.height / 2  }
+                else if position.y < Mirror.size.height * 1.5  { position.y = Mirror.size.height * 1.5   }
                 if (position.x + Mirror.size.width / 2 > scene.size.width) {
                     if (test == false) {
                         findSnapPos(at: CGPoint(x: scene.size.width - reflector.size.width / 2,  y: position.y), scene)
