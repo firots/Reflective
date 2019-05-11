@@ -15,7 +15,6 @@ class Cannon: SKNode {
     var foundation: SKSpriteNode!
     var light: SKLightNode!
     var barrel: SKSpriteNode!
-    //var dragger: SKSpriteNode!
     var charge = false
     var dragging = -1
     var rotating: CGPoint!
@@ -43,14 +42,6 @@ class Cannon: SKNode {
         foundation.zPosition = 100
         //foundation.shader = Laser.shader
         addChild(foundation)
-        
-        
-        /*dragger = SKSpriteNode(texture: nil, color: color, size: CGSize(width: 150, height: 150))
-        dragger.name = "cannon"
-        dragger.position = CGPoint(x: 0, y: 0)
-        dragger.zPosition = 100
-        dragger.isHidden = true
-        addChild(dragger)*/
         
         barrel = SKSpriteNode(texture: nil, color: color, size: CGSize(width: 10, height: 40))
         barrel.physicsBody = SKPhysicsBody(rectangleOf: barrel.size)
