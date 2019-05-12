@@ -27,7 +27,6 @@ class GameScene: SKScene, HasSoundButtons {
     var guide: Laser?
     var ball: Ball?
     var won = false
-    var backTapped = false
     static var scale: CGFloat = 1.0
     var recognizer: UITapGestureRecognizer!
     

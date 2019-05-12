@@ -39,6 +39,7 @@ class MenuScene: SKScene, HasSoundButtons {
             addChild(light)
         }
         addMenuButton("Level: \(Level.currentLevel)" , at: CGPoint(x: self.size.width / 2, y: self.size.height / 2 - 150))
+        addMenuButton("Credits" , at: CGPoint(x: self.size.width / 2, y: self.size.height / 2 - 250))
         recognizer = UITapGestureRecognizer(target: self, action: #selector(tap))
         view.addGestureRecognizer(recognizer)
     }
@@ -57,6 +58,9 @@ class MenuScene: SKScene, HasSoundButtons {
                 if (nodeLabel.text?.starts(with: "Level"))! {
                     levelSelection()
                     return
+                } else if (nodeLabel.text == "Credits") {
+                    credits()
+                    return
                 }
             } else if let _ = node as? StartButton {
                 startGame()
@@ -73,6 +77,15 @@ class MenuScene: SKScene, HasSoundButtons {
 
     func levelSelection() {
         if let scene = SKScene(fileNamed: "LevelSelectionScene") as? LevelSelectionScene {
+            Sound.play("back.wav", scene: self)
+            scene.size = size
+            scene.scaleMode = .aspectFit
+            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: 1))
+        }
+    }
+    
+    func credits() {
+        if let scene = SKScene(fileNamed: "CreditsScene") as? CreditsScene {
             Sound.play("back.wav", scene: self)
             scene.size = size
             scene.scaleMode = .aspectFit

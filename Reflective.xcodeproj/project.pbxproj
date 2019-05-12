@@ -43,6 +43,8 @@
 		76FD947722882D1600EED04C /* SKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD947622882D1600EED04C /* SKColor.swift */; };
 		76FD94792288380700EED04C /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD94782288380700EED04C /* Hint.swift */; };
 		76FD947B22883B1F00EED04C /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD947A22883B1F00EED04C /* Pulse.swift */; };
+		76FD947D2288720000EED04C /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76FD947C2288720000EED04C /* CreditsScene.sks */; };
+		76FD947F2288722500EED04C /* CreditsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD947E2288722500EED04C /* CreditsScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		76FD947622882D1600EED04C /* SKColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKColor.swift; sourceTree = "<group>"; };
 		76FD94782288380700EED04C /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 		76FD947A22883B1F00EED04C /* Pulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulse.swift; sourceTree = "<group>"; };
+		76FD947C2288720000EED04C /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
+		76FD947E2288722500EED04C /* CreditsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +172,9 @@
 				7610D2452263664E00240B51 /* GameScene.sks */,
 				7610D2492263664E00240B51 /* GameScene.swift */,
 				76D7F4D3227617F200C26758 /* MenuScene.swift */,
+				76FD947C2288720000EED04C /* CreditsScene.sks */,
 				76D7F4D1227616E800C26758 /* MenuScene.sks */,
+				76FD947E2288722500EED04C /* CreditsScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				7610D2482263664E00240B51 /* Actions.sks in Resources */,
 				76B23B9C227F78B2008FA877 /* Audiowide-Regular.ttf in Resources */,
 				76D7F4D2227616E800C26758 /* MenuScene.sks in Resources */,
+				76FD947D2288720000EED04C /* CreditsScene.sks in Resources */,
 				767E78D422834793006B09E7 /* bgmusic.mp3 in Resources */,
 				76E887582284DCD30027140B /* back.wav in Resources */,
 			);
@@ -311,6 +318,7 @@
 				7610D24C2263664E00240B51 /* GameViewController.swift in Sources */,
 				7610D26022636F1200240B51 /* MenuButton.swift in Sources */,
 				76FD947122882C8700EED04C /* SKScene.swift in Sources */,
+				76FD947F2288722500EED04C /* CreditsScene.swift in Sources */,
 				7610D25C226368A600240B51 /* Mirror.swift in Sources */,
 				76D7F4D4227617F200C26758 /* MenuScene.swift in Sources */,
 				76389D9C227FA81A006974C0 /* StartButton.swift in Sources */,

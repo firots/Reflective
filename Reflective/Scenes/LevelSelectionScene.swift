@@ -10,7 +10,6 @@ import UIKit
 import SpriteKit
 
 class LevelSelectionScene: SKScene {
-    var backTapped = false
     var tappedLevel = 0
     var page = 0
     var blocks = [Block]()
