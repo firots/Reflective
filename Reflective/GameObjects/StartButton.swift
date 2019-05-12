@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class StartButton: SKNode {
-    let logo: SKSpriteNode!
+    let logo: SKSpriteNode
 
     override init() {
         logo = SKSpriteNode(imageNamed: "right")

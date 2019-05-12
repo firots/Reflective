@@ -12,9 +12,9 @@ import SpriteKit
 class Cannon: SKNode {
     
     static var size: CGSize!
-    var foundation: SKSpriteNode!
+    var foundation: SKSpriteNode
     var light: SKLightNode?
-    var barrel: SKSpriteNode!
+    var barrel: SKSpriteNode
     var charge = false
     var dragging = -1
     var rotating: CGPoint!
@@ -29,28 +29,25 @@ class Cannon: SKNode {
         }
     }
     
-
-    
     override init() {
-        super.init()
-        self.name = "cannon"
         foundation = SKSpriteNode(texture: nil, color: color, size: CGSize(width: 40, height: 40))
         foundation.physicsBody = SKPhysicsBody(rectangleOf: foundation.size)
         foundation.physicsBody?.isDynamic = false
         foundation.name = "foundation"
         foundation.position = CGPoint(x: 0, y: 0)
         foundation.zPosition = 100
-        //foundation.shader = Laser.shader
-        addChild(foundation)
-        
+
         barrel = SKSpriteNode(texture: nil, color: color, size: CGSize(width: 10, height: 40))
         barrel.physicsBody = SKPhysicsBody(rectangleOf: barrel.size)
         barrel.physicsBody?.isDynamic = false
         barrel.name = "foundation"
         barrel.position = CGPoint(x: 0, y: 20)
         barrel.zPosition = 100
-        //barrel.shader = Laser.shader
+        
+        super.init()
+        self.name = "cannon"
         addChild(barrel)
+        addChild(foundation)
         
         if Settings.shadows == true {
             light = SKLightNode()
@@ -59,7 +56,6 @@ class Cannon: SKNode {
             light!.falloff = 2
             addChild(light!)
         }
-        
         setScale(GameScene.scale)
     }
     

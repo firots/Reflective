@@ -13,10 +13,10 @@ class Mirror: SKNode {
     public static var size: CGSize!
     public static var spawnPos: CGPoint!
     
-    var mirrorBase: SKSpriteNode!
-    var mirrorTop: SKSpriteNode!
-    var mirrorBottom: SKSpriteNode!
-    var reflector: SKSpriteNode!
+    var mirrorBase: SKSpriteNode
+    var mirrorTop: SKSpriteNode
+    var mirrorBottom: SKSpriteNode
+    var reflector: SKSpriteNode
     var snappedPos: CGPoint?
     var light: SKLightNode?
     var reversed = false
@@ -30,7 +30,6 @@ class Mirror: SKNode {
         }
     }
 
-    
     override var position: CGPoint {
         didSet {
             setDirection()
@@ -38,16 +37,11 @@ class Mirror: SKNode {
     }
     
     override  init() {
-        super.init()
-        self.name = "mirror"
-        
         mirrorBase = SKSpriteNode(texture: nil, color: UIColor.lightGray, size: CGSize(width: cubeSize * 2, height: cubeSize))
         mirrorBase.name = "mirrorBase"
         mirrorBase.position = CGPoint(x: 0, y: 0)
         mirrorBase.zPosition = 1
         mirrorBase.isHidden = true
-        addChild(mirrorBase)
-        
         
         mirrorTop = SKSpriteNode(texture: nil, color: UIColor.darkGray, size: CGSize(width: 10, height: 5))
         mirrorTop.name = "mirrorTop"
@@ -55,17 +49,15 @@ class Mirror: SKNode {
         mirrorTop.zPosition = 1
         mirrorTop.physicsBody = SKPhysicsBody(rectangleOf: mirrorTop.size)
         mirrorTop.physicsBody?.isDynamic = false
-        addChild(mirrorTop)
         
         mirrorBottom = SKSpriteNode(texture: nil, color: UIColor.darkGray, size: CGSize(width: 10, height: 5))
         mirrorBottom.name = "mirrorBottom"
-
+        
         mirrorBottom.position = CGPoint(x: 0, y: ((CGFloat(cubeSize) / 2) + 2.5) * -1)
         mirrorBottom.zPosition = 1
         mirrorBottom.physicsBody = SKPhysicsBody(rectangleOf: mirrorBottom.size)
         mirrorBottom.physicsBody?.isDynamic = false
-        addChild(mirrorBottom)
-    
+        
         reflector = SKSpriteNode(texture: nil, color: Colors.red, size: CGSize(width: 10, height: cubeSize))
         reflector.physicsBody = SKPhysicsBody(rectangleOf: reflector.size)
         reflector.colorBlendFactor = 1
@@ -73,8 +65,14 @@ class Mirror: SKNode {
         reflector.position = CGPoint(x: 0, y: 0)
         reflector.zPosition = 1
         reflector.name = "reflector"
-        addChild(reflector)
         
+        super.init()
+        self.name = "mirror"
+        addChild(mirrorBase)
+        addChild(mirrorTop)
+        addChild(reflector)
+        addChild(mirrorBottom)
+
         if Settings.shadows == true {
             light = SKLightNode()
             light!.position = CGPoint(x: 0 / 2, y: 0)

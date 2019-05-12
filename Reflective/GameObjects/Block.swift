@@ -11,19 +11,21 @@ import SpriteKit
 
 class Block: SKNode {
     static var size: CGSize!
-    var blockBase: SKSpriteNode!
+    var blockBase: SKSpriteNode
     var snappers = [Snapper]()
     let cubeSize = 50
     
     override init() {
-        super.init()
-        self.name = "block"
         blockBase = SKSpriteNode(texture: nil, color: UIColor.darkGray, size: CGSize(width: cubeSize, height: cubeSize))
         blockBase.physicsBody = SKPhysicsBody(rectangleOf: blockBase.size)
         blockBase.physicsBody?.isDynamic = false
         blockBase.name = "blockBase"
         blockBase.position = CGPoint(x: 0, y: 0)
         blockBase.zPosition = 1
+        
+        super.init()
+        self.name = "block"
+        
         addChild(blockBase)
         setScale(GameScene.scale)
     }
