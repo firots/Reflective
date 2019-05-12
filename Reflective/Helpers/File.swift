@@ -9,7 +9,7 @@
 import Foundation
 
 struct Settings {
-    static let shadows = false
+    static let shadows = true
     static var sound = true {
         didSet {
             let defaults = UserDefaults.standard

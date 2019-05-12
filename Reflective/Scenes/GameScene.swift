@@ -14,6 +14,7 @@ import GameplayKit
 class GameScene: SKScene, HasSoundButtons {
     
     var mirrors = [Mirror]()
+    var hints = [Hint]()
     var blocks = [Block]()
     var level: Int! {
         didSet {
@@ -147,6 +148,7 @@ class GameScene: SKScene, HasSoundButtons {
         addBackButton()
         addSoundButtons()
         spawnGameObjects()
+        addHints()
         recognizer = UITapGestureRecognizer(target: self, action: #selector(tap))
         view.addGestureRecognizer(recognizer)
     }
@@ -169,6 +171,46 @@ class GameScene: SKScene, HasSoundButtons {
         mirrorCounter.position = CGPoint(x: Mirror.spawnPos.x - Mirror.size.width / 4, y: Mirror.spawnPos.y)
         mirrorCounter.isHidden = true
         addChild(mirrorCounter)
+    }
+    
+    func addHints() {
+        if level == 1 {
+            if let cannon = self.cannon {
+                let hint = Hint(animated: true, text: "tap cannon to fire")
+                hint.position = CGPoint(x: 0, y: Cannon.size.height)
+                hints.append(hint)
+                cannon.addChild(hint)
+            }
+        } else if level == 2 {
+            if let cannon = self.cannon {
+                let dragHint = Hint(animated: true, text: "drag cannon to left or right")
+                dragHint.position = CGPoint(x: 0, y: Cannon.size.height)
+                hints.append(dragHint)
+                cannon.addChild(dragHint)
+            }
+            if let ball = self.ball {
+                let aimHint = Hint(animated: true, text: "swipe right or left to aim")
+                aimHint.position = CGPoint(x: ball.position.x, y: ball.position.y + Cannon.size.height)
+                hints.append(aimHint)
+                addChild(aimHint)
+            }
+        } else if level == 3 {
+            let mirrorHint = Hint(animated: true, text: "drag mirror in the bottom of screen to screen edges and reflect laser from it")
+            mirrorHint.label.preferredMaxLayoutWidth = size.width / 2
+            mirrorHint.label.numberOfLines = 3
+            mirrorHint.position = CGPoint(x: size.width / 2, y: size.height / 2)
+            hints.append(mirrorHint)
+            addChild(mirrorHint)
+        } else if level == 6 {
+            if  !blocks.isEmpty {
+                let block = blocks[0]
+                let snapHint = Hint(animated: true, text: "drag mirror to my bottom :)")
+                snapHint.position = CGPoint(x: 0, y: 0)
+                hints.append(snapHint)
+                block.addChild(snapHint)
+            }
+
+        }
     }
     
     func wonLevel() {
