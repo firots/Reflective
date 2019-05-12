@@ -38,9 +38,9 @@ class Ball: SKNode {
         if Settings.shadows == true {
             light = SKLightNode()
             light!.position = CGPoint(x: 0 / 2, y: 0)
-            light!.categoryBitMask = 0b0001
+            light!.categoryBitMask = 1
             light!.lightColor = self.color
-            light!.falloff = 0.2
+            light!.falloff = 0.1
             addChild(light!)
         }
         setScale(GameScene.scale * 0.2)

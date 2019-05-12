@@ -21,19 +21,3 @@ struct Colors {
     static let white = UIColor.white
 
 }
-
-extension SKColor {
-    func change(scene: GameScene) -> SKColor {
-        let level = scene.currentLevel()
-        var newIndex = 0
-        for (index, color) in level.order.enumerated() {
-            if self == color {
-                if index != level.order.count - 1 {
-                    newIndex = index + 1
-                }
-                break
-            }
-        }
-        return level.order[newIndex]
-    }
-}

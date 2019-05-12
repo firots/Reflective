@@ -14,6 +14,7 @@ class MenuScene: SKScene, HasSoundButtons {
     var menuButtons = [MenuButton]()
     var light: SKLightNode!
     var recognizer: UITapGestureRecognizer!
+    var startButton: StartButton!
 
     func addMenuButton(_ text: String, at position: CGPoint) {
         let button = MenuButton()
@@ -24,7 +25,7 @@ class MenuScene: SKScene, HasSoundButtons {
     
     override func didMove(to view: SKView) {
         //addMenuButton("Start Game", at: CGPoint(x: self.size.width / 2, y: self.size.height / 2))
-        let startButton = StartButton()
+        startButton = StartButton()
         startButton.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         addChild(startButton)
         addBackGround()
@@ -32,7 +33,7 @@ class MenuScene: SKScene, HasSoundButtons {
         if Settings.shadows == true {
             light = SKLightNode()
             light.position = startButton.position
-            light.categoryBitMask = 0b0001
+            light.categoryBitMask = 1
             light.lightColor = UIColor.white
             light.falloff = 0.2
             addChild(light)
@@ -81,6 +82,7 @@ class MenuScene: SKScene, HasSoundButtons {
     
     func startGame() {
         if let scene = SKScene(fileNamed: "GameScene") as? GameScene {
+            startButton.logo.shader = Laser.shader
             Sound.play("back.wav", scene: self)
             scene.size = size
             scene.scaleMode = .aspectFit

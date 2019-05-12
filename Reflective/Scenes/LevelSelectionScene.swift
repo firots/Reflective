@@ -28,7 +28,7 @@ class LevelSelectionScene: SKScene {
         if Settings.shadows == true {
             let light = SKLightNode()
             light.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-            light.categoryBitMask = 0b0001
+            light.categoryBitMask = 1
             light.lightColor = UIColor.white
             light.falloff = 0.2
             addChild(light)
@@ -59,6 +59,7 @@ class LevelSelectionScene: SKScene {
                 if let tappedLevel = Int(block.name!) {
                     if tappedLevel <= maxLevel + 1 {
                         block.blockBase.color = UIColor.green
+                        block.blockBase.shader = Laser.shader
                         Level.currentLevel = tappedLevel
                         mainMenu()
                         return
@@ -128,6 +129,9 @@ class LevelSelectionScene: SKScene {
             text.position = CGPoint(x:0, y: 0)
             text.zPosition = 11
             text.text = String(level)
+            if (maxLevel >= level) {
+                text.fontColor = UIColor.green
+            }
             block.addChild(text)
             if Level.currentLevel == level {
                 text.color = UIColor.lightGray

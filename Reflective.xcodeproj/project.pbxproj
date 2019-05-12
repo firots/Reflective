@@ -37,6 +37,10 @@
 		76E8875A2284DD4C0027140B /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E887592284DD4C0027140B /* Sound.swift */; };
 		76F01FC22279D1AB0098CF8F /* Snapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F01FC12279D1AB0098CF8F /* Snapper.swift */; };
 		76F3DC2D226B647F006E42AD /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3DC2C226B647F006E42AD /* Block.swift */; };
+		76FD947122882C8700EED04C /* SKScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD947022882C8700EED04C /* SKScene.swift */; };
+		76FD947322882CB700EED04C /* SKScene+HasSoundButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD947222882CB700EED04C /* SKScene+HasSoundButtons.swift */; };
+		76FD947522882CFC00EED04C /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD947422882CFC00EED04C /* CGPoint.swift */; };
+		76FD947722882D1600EED04C /* SKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FD947622882D1600EED04C /* SKColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		76E887592284DD4C0027140B /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		76F01FC12279D1AB0098CF8F /* Snapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapper.swift; sourceTree = "<group>"; };
 		76F3DC2C226B647F006E42AD /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		76FD947022882C8700EED04C /* SKScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScene.swift; sourceTree = "<group>"; };
+		76FD947222882CB700EED04C /* SKScene+HasSoundButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+HasSoundButtons.swift"; sourceTree = "<group>"; };
+		76FD947422882CFC00EED04C /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		76FD947622882D1600EED04C /* SKColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,7 @@
 		7610D2422263664E00240B51 /* Reflective */ = {
 			isa = PBXGroup;
 			children = (
+				76FD946F22882C4100EED04C /* Extensions */,
 				76E8875F2284E1CE0027140B /* Helpers */,
 				76E8875D2284E1660027140B /* Scenes */,
 				76E8875C2284E0E30027140B /* GameObjects */,
@@ -185,6 +194,17 @@
 				76B23B9B227F78B2008FA877 /* Audiowide-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		76FD946F22882C4100EED04C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				76FD947022882C8700EED04C /* SKScene.swift */,
+				76FD947222882CB700EED04C /* SKScene+HasSoundButtons.swift */,
+				76FD947422882CFC00EED04C /* CGPoint.swift */,
+				76FD947622882D1600EED04C /* SKColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,12 +294,16 @@
 				7647E2EA226E24C00047E42F /* Laser.swift in Sources */,
 				760B2BB7226F70380050969E /* Ball.swift in Sources */,
 				76E8875A2284DD4C0027140B /* Sound.swift in Sources */,
+				76FD947722882D1600EED04C /* SKColor.swift in Sources */,
 				767E78D02283387E006B09E7 /* File.swift in Sources */,
 				76F3DC2D226B647F006E42AD /* Block.swift in Sources */,
+				76FD947522882CFC00EED04C /* CGPoint.swift in Sources */,
 				76F01FC22279D1AB0098CF8F /* Snapper.swift in Sources */,
+				76FD947322882CB700EED04C /* SKScene+HasSoundButtons.swift in Sources */,
 				7610D2622263760700240B51 /* Level.swift in Sources */,
 				7610D24C2263664E00240B51 /* GameViewController.swift in Sources */,
 				7610D26022636F1200240B51 /* MenuButton.swift in Sources */,
+				76FD947122882C8700EED04C /* SKScene.swift in Sources */,
 				7610D25C226368A600240B51 /* Mirror.swift in Sources */,
 				76D7F4D4227617F200C26758 /* MenuScene.swift in Sources */,
 				76389D9C227FA81A006974C0 /* StartButton.swift in Sources */,

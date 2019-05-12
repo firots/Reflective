@@ -59,8 +59,8 @@ class Mirror: SKNode {
         
         mirrorBottom = SKSpriteNode(texture: nil, color: UIColor.darkGray, size: CGSize(width: 10, height: 5))
         mirrorBottom.name = "mirrorBottom"
-        let y = ((CGFloat(cubeSize) / 2) + 2.5) * -1
-        mirrorBottom.position = CGPoint(x: 0, y: y)
+
+        mirrorBottom.position = CGPoint(x: 0, y: ((CGFloat(cubeSize) / 2) + 2.5) * -1)
         mirrorBottom.zPosition = 1
         mirrorBottom.physicsBody = SKPhysicsBody(rectangleOf: mirrorBottom.size)
         mirrorBottom.physicsBody?.isDynamic = false
@@ -78,8 +78,8 @@ class Mirror: SKNode {
         if Settings.shadows == true {
             light = SKLightNode()
             light!.position = CGPoint(x: 0 / 2, y: 0)
-            light!.categoryBitMask = 0b0001
-            light!.falloff = 2
+            light!.categoryBitMask = 2
+            light!.falloff = 0.75
             addChild(light!)
         }
         setScale(GameScene.scale)
@@ -202,10 +202,4 @@ class Mirror: SKNode {
     }
     
     
-}
-
-extension CGPoint {
-    func distance(point: CGPoint) -> CGFloat {
-        return abs(CGFloat(hypotf(Float(point.x - x), Float(point.y - y))))
-    }
 }
