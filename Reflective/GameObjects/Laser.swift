@@ -21,10 +21,8 @@ class Laser: SKNode {
 
     override init() {
         super.init()
-
     }
     
-
     func start(from startPoint: CGPoint, angle: CGFloat, distance: CGFloat, color: SKColor, width: CGFloat, glowWidth: CGFloat, isLaser: Bool, shader: SKShader? ) {
         self.base = SKShapeNode()
         self.isLaser = isLaser

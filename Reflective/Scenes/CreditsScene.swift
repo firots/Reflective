@@ -25,7 +25,7 @@ class CreditsScene: SKScene {
         }
         recognizer = UITapGestureRecognizer(target: self, action: #selector(tap))
         view.addGestureRecognizer(recognizer)
-        addCredit(text: "Designed and developed by\n            Fırat Özsarıkamış", lines: 2)
+        addCredit(text: "Designed and developed by\n          Fırat Özsarıkamış", lines: 2)
         addCredit(text: "Music by Eric Matyas\nwww.soundimage.org", lines: 2)
         addCredit(text: "          Laser sound by Dpoggioli\nwww.freesound.org/people/Dpoggioli/", lines: 2)
         
