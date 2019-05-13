@@ -131,8 +131,18 @@ class Mirror: SKNode {
                 return true
             }
             else {
-                if position.y > scene.size.width * 1.65 {position.y = scene.size.width * 1.65 }
-                else if position.y < Mirror.size.height * 1.5  { position.y = Mirror.size.height * 1.5   }
+                if position.y > scene.size.width * 1.60 {
+                    position.y = scene.size.width * 1.60
+                    if test == true {
+                        return false
+                    }
+                }
+                else if position.y < Mirror.size.height * 1.5  {
+                    position.y = Mirror.size.height * 1.5
+                    if test == true {
+                        return false
+                    }
+                }
                 if (position.x + Mirror.size.width / 2 > scene.size.width) {
                     if (test == false) {
                         findSnapPos(at: CGPoint(x: scene.size.width - reflector.size.width / 2,  y: position.y), scene)
