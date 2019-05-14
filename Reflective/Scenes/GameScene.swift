@@ -194,7 +194,7 @@ class GameScene: SKScene, HasSoundButtons {
                 addChild(aimHint)
             }
         } else if level == 3 {
-            let mirrorHint = Hint(animated: true, text: "drag mirror in the bottom of screen to screen edges and reflect laser from it")
+            let mirrorHint = Hint(animated: true, text: "<- drag mirror in the bottom of screen to screen edges and reflect laser from it ->")
             mirrorHint.label.preferredMaxLayoutWidth = size.width / 2
             mirrorHint.label.numberOfLines = 3
             mirrorHint.position = CGPoint(x: size.width / 2, y: size.height / 2)
@@ -203,7 +203,7 @@ class GameScene: SKScene, HasSoundButtons {
         } else if level == 6 {
             if  !blocks.isEmpty {
                 let block = blocks[0]
-                let snapHint = Hint(animated: true, text: "drag mirror to my bottom :)")
+                let snapHint = Hint(animated: true, text: "drag mirror to bottom of this box")
                 snapHint.position = CGPoint(x: 0, y: 0)
                 hints.append(snapHint)
                 block.addChild(snapHint)
