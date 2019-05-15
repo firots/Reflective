@@ -228,6 +228,34 @@ struct Level {
              BlockData(SCPoint(x: 0.5, y: 1.2), [SnapDirection.bottom]),
              BlockData(SCPoint(x: 0.75, y: 1.4), [SnapDirection.bottom]),
              BallData(SCPoint(x: 0.4, y: 1.35), Colors.blue)]))
+        
+        
+        
+        
+        Level.levels.append(Level(order: [Colors.blue, Colors.green, Colors.yellow, Colors.orange, Colors.purple, Colors.red],
+            mirrors: [Colors.blue, Colors.green, Colors.yellow, Colors.orange, Colors.purple],
+            cannonColor: Colors.blue,
+            gameObjects:
+            [BlockData(SCPoint(x: 0.5, y: 0.5), [SnapDirection.left]),
+             BlockData(SCPoint(x: 0.7, y: 0.7), [SnapDirection.all]),
+             BlockData(SCPoint(x: 0.5, y: 1.4), [SnapDirection.bottom]),
+             BlockData(SCPoint(x: 0.3, y: 1.4), [SnapDirection.bottom]),
+             BlockData(SCPoint(x: 0.7, y: 1.4), [SnapDirection.bottom]),
+             BallData(SCPoint(x: 0.7, y: 1.65), Colors.red)]))
+        
+        
+        Level.levels.append(Level(order: [Colors.green, Colors.purple, Colors.magenta, Colors.orange, Colors.yellow, Colors.blue, Colors.red, Colors.white],
+            mirrors: [Colors.green, Colors.purple, Colors.magenta, Colors.orange, Colors.yellow, Colors.blue, Colors.red],
+            cannonColor: Colors.green,
+            gameObjects:
+            [BlockData(SCPoint(x: 0.5, y: 0.5), [SnapDirection.all]),
+             BlockData(SCPoint(x: 0.7, y: 1.4), [SnapDirection.bottom]),
+             BlockData(SCPoint(x: 0.5, y: 1.4), [SnapDirection.bottom]),
+             BlockData(SCPoint(x: 0.4, y: 1.4), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.3, y: 1.4), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.8, y: 1.4), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.2, y: 1.4), [SnapDirection]()),
+             BallData(SCPoint(x: 0.2, y: 0.9), Colors.white)]))
 
 
         let defaults = UserDefaults.standard
