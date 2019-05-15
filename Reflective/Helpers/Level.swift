@@ -200,9 +200,9 @@ struct Level {
         
         
         Level.levels.append(Level(order: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green, Colors.magenta],
-                                  mirrors: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green],
-                                  cannonColor: Colors.yellow,
-                                  gameObjects:
+            mirrors: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green],
+            cannonColor: Colors.yellow,
+            gameObjects:
             [BlockData(SCPoint(x: 0.1, y: 0.3), [SnapDirection.left]),
              BlockData(SCPoint(x: 0.2, y: 0.5), [SnapDirection.right]),
              BlockData(SCPoint(x: 0.3, y: 0.7), [SnapDirection.right]),
@@ -212,6 +212,22 @@ struct Level {
              BlockData(SCPoint(x: 0.7, y: 1.5), [SnapDirection.bottom]),
              BlockData(SCPoint(x: 0.6, y: 1.8), [SnapDirection.bottom]),
              BallData(SCPoint(x: 0.25, y: 1.6), Colors.magenta)]))
+        
+        
+        
+        Level.levels.append(Level(order: [Colors.red, Colors.orange, Colors.yellow, Colors.green, Colors.blue],
+            mirrors: [Colors.red, Colors.orange, Colors.yellow, Colors.green],
+            cannonColor: Colors.red,
+            gameObjects:
+            [BlockData(SCPoint(x: 0.1, y: 0.3), [SnapDirection.left]),
+             BlockData(SCPoint(x: 0.7, y: 0.4), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.5, y: 0.7), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.2, y: 0.3), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.2, y: 1.3), [SnapDirection.left]),
+             BlockData(SCPoint(x: 0.4, y: 1.2), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.5, y: 1.2), [SnapDirection.bottom]),
+             BlockData(SCPoint(x: 0.75, y: 1.4), [SnapDirection.bottom]),
+             BallData(SCPoint(x: 0.4, y: 1.35), Colors.blue)]))
 
 
         let defaults = UserDefaults.standard
