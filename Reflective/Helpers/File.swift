@@ -9,7 +9,7 @@
 import Foundation
 
 struct Settings {
-    static let shadows = false
+    static let shadows = true
     static var sound = true {
         didSet {
             let defaults = UserDefaults.standard
@@ -23,7 +23,7 @@ struct Settings {
         }
     }
     
-    static var test = true
+    static var test = false
     
     static func load() {
         let defaults = UserDefaults.standard
