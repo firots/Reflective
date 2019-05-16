@@ -99,15 +99,8 @@ class Cannon: SKNode {
     }
     
     func rotate(to touchPosition:CGPoint, at time: TimeInterval) {
-        var timeDiff: TimeInterval!
-        if rotatingTime == nil {
-            rotatingTime = time
-        }
-        timeDiff = time - rotatingTime
-        rotatingTime = time
-        let distance = touchPosition.x - rotating.x
-        let multiplier = -9500 * CGFloat(timeDiff)
-        let rotation = (barrel.zRotation + distance / multiplier)
+        let distance =  rotating.x - touchPosition.x
+        let rotation = (barrel.zRotation + distance / 300)
         if (rotation < .pi / 2 && rotation > -1.56 ) {
             barrel.zRotation = rotation
             
