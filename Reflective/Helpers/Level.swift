@@ -60,6 +60,29 @@ struct Level {
         mirrors: [Colors.red, Colors.blue, Colors.yellow], cannonColor: Colors.red,
         gameObjects: [BlockData(SCPoint(x: 0.7, y: 1.28), [SnapDirection.right]), BlockData(SCPoint(x: 0.7, y: 1.15), [SnapDirection]()), BlockData(SCPoint(x: 0.7, y: 1.02), [SnapDirection]()), BallData(SCPoint(x: 0.9, y: 1.28), Colors.green)]))
         
+        
+        Level.levels.append(Level(order: [Colors.blue, Colors.green, Colors.yellow, Colors.orange],
+                                  mirrors: [Colors.blue, Colors.green, Colors.yellow],
+                                  cannonColor: Colors.blue,
+                                  gameObjects:
+            [BlockData(SCPoint(x: 0.1, y: 0.3), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.15, y: 0.45), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.20, y: 0.6), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.25, y: 0.75), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.30, y: 0.9), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.35, y: 1.05), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.40, y: 1.2), [SnapDirection.right]),
+             
+             BlockData(SCPoint(x: 0.9, y: 0.3), [SnapDirection.left]),
+             BlockData(SCPoint(x: 0.85, y: 0.45), [SnapDirection.left]),
+             BlockData(SCPoint(x: 0.80, y: 0.6), [SnapDirection.left]),
+             BlockData(SCPoint(x: 0.75, y: 0.75), [SnapDirection.left]),
+             BlockData(SCPoint(x: 0.70, y: 0.9), [SnapDirection.left]),
+             BlockData(SCPoint(x: 0.65, y: 1.05), [SnapDirection.left]),
+             BlockData(SCPoint(x: 0.60, y: 1.2), [SnapDirection.left]),
+             
+             BallData(SCPoint(x: 0.7, y: 1.65), Colors.orange)]))
+        
         Level.levels.append(Level(order: [Colors.red, Colors.green, Colors.blue, Colors.magenta],
         mirrors: [Colors.red, Colors.green, Colors.blue], cannonColor: Colors.red,
         gameObjects: [BlockData(SCPoint(x: 0.35, y: 1), [SnapDirection.right]), BlockData(SCPoint(x: 0.65, y: 1), [SnapDirection.left]), BlockData(SCPoint(x: 0.5, y: 1.2), [SnapDirection.bottom]), BallData(SCPoint(x: 0.25, y: 0.25), Colors.magenta)]))
@@ -193,6 +216,33 @@ struct Level {
         
         
         Level.levels.append(Level(order: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green, Colors.magenta],
+                                  mirrors: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green],
+                                  cannonColor: Colors.yellow,
+                                  gameObjects:
+            [BlockData(SCPoint(x: 0.1, y: 0.6), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.2, y: 0.8), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.3, y: 0.2), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.5, y: 0.3), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.2, y: 0.5), [SnapDirection.right]),
+             BallData(SCPoint(x: 0.25, y: 0.66), Colors.magenta)]))
+        
+        
+        Level.levels.append(Level(order: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green, Colors.magenta],
+                                  mirrors: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green],
+                                  cannonColor: Colors.yellow,
+                                  gameObjects:
+            [BlockData(SCPoint(x: 0.64, y: 0.8), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.32, y: 0.32), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.16, y: 0.16), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.8, y: 0.5), [SnapDirection.top]),
+             BlockData(SCPoint(x: 0.9, y: 0.7), [SnapDirection.bottom, SnapDirection.left]),
+             BlockData(SCPoint(x: 0.75, y: 1.5), [SnapDirection.bottom]),
+             BlockData(SCPoint(x: 0.5, y: 0.6), [SnapDirection]()),
+             BallData(SCPoint(x: 0.12, y: 0.3), Colors.magenta)]))
+        
+        
+        
+        Level.levels.append(Level(order: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green, Colors.magenta],
             mirrors: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green, Colors.magenta],
             cannonColor: Colors.yellow,
             gameObjects:
@@ -224,6 +274,23 @@ struct Level {
              BlockData(SCPoint(x: 0.4, y: 1.5), [SnapDirection.left]),
              
              BallData(SCPoint(x: 0.25, y: 1.6), Colors.yellow)]))
+        
+        
+        Level.levels.append(Level(order: [Colors.white, Colors.yellow, Colors.green, Colors.blue, Colors.purple, Colors.red, Colors.magenta, Colors.orange],
+                                  mirrors: [Colors.white, Colors.yellow, Colors.green, Colors.blue, Colors.purple, Colors.red, Colors.magenta, Colors.orange],
+                                  cannonColor: Colors.white,
+                                  gameObjects:
+            [BlockData(SCPoint(x: 0.3, y: 5), [SnapDirection.bottom]),
+             BlockData(SCPoint(x: 0.1, y: 0.8), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.2, y: 0.8), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.3, y: 0.8), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.4, y: 0.8), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.5, y: 0.8), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.6, y: 0.8), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.2, y: 0.6), [SnapDirection.right]),
+             BlockData(SCPoint(x: 0.3, y: 1.5), [SnapDirection.bottom]),
+             BlockData(SCPoint(x: 0.6, y: 1.0), [SnapDirection.left, SnapDirection.right]),
+             BallData(SCPoint(x: 0.4, y: 0.95), Colors.white)]))
         
         
         Level.levels.append(Level(order: [Colors.yellow, Colors.orange, Colors.red, Colors.purple, Colors.blue, Colors.green, Colors.magenta],
@@ -271,6 +338,20 @@ struct Level {
              BallData(SCPoint(x: 0.7, y: 1.65), Colors.red)]))
         
         
+        
+        Level.levels.append(Level(order: [Colors.green, Colors.purple, Colors.magenta, Colors.orange, Colors.yellow, Colors.blue, Colors.red, Colors.white],
+                                  mirrors: [Colors.green, Colors.purple, Colors.magenta, Colors.orange, Colors.yellow, Colors.blue, Colors.red],
+                                  cannonColor: Colors.green,
+                                  gameObjects:
+            [BlockData(SCPoint(x: 0.1, y: 0.3), [SnapDirection.all]),
+             BlockData(SCPoint(x: 0.4, y: 1.2), [SnapDirection.all]),
+             BlockData(SCPoint(x: 0.7, y: 1.4), [SnapDirection.all]),
+             BlockData(SCPoint(x: 0.3, y: 0.7), [SnapDirection.right, SnapDirection.left]),
+             BlockData(SCPoint(x: 0.3, y: 0.6), [SnapDirection]()),
+             BlockData(SCPoint(x: 0.7, y: 1.1), [SnapDirection.all]),
+             BallData(SCPoint(x: 0.1, y: 0.65), Colors.white)]))
+        
+        
         Level.levels.append(Level(order: [Colors.green, Colors.purple, Colors.magenta, Colors.orange, Colors.yellow, Colors.blue, Colors.red, Colors.white],
             mirrors: [Colors.green, Colors.purple, Colors.magenta, Colors.orange, Colors.yellow, Colors.blue, Colors.red],
             cannonColor: Colors.green,
@@ -298,6 +379,21 @@ struct Level {
              BlockData(SCPoint(x: 0.5, y: 0.5), [SnapDirection.top]),
              BlockData(SCPoint(x: 0.6, y: 0.5), [SnapDirection.right]),
              BallData(SCPoint(x: 0.9, y: 0.65), Colors.magenta)]))
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+        
+        
+
+        
+        
         
  
 
