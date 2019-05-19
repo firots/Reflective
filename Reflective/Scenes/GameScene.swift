@@ -51,6 +51,7 @@ class GameScene: SKScene, HasSoundButtons {
             if cannon!.isShooting() == false && won == false {
                 if node.name == "mirror" {
                     if let mirror = node as? Mirror {
+                        Sound.play("snapStart", scene: scene)
                         draggingMirror = mirror
                         return
                     }
@@ -154,6 +155,7 @@ class GameScene: SKScene, HasSoundButtons {
 
     func resetDraggingMirror() {
         if let mirror = draggingMirror {
+            Sound.play("snapFail", scene: scene)
             if let snappedPos = mirror.snappedPos {
                 mirror.position = snappedPos
             } else {

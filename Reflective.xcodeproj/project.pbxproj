@@ -21,6 +21,9 @@
 		7610D26022636F1200240B51 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610D25F22636F1200240B51 /* MenuButton.swift */; };
 		7610D2622263760700240B51 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610D2612263760700240B51 /* Level.swift */; };
 		76389D9C227FA81A006974C0 /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76389D9B227FA81A006974C0 /* StartButton.swift */; };
+		763D9D8C2291FA2D00789C54 /* snapFail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 763D9D892291FA2D00789C54 /* snapFail.wav */; };
+		763D9D8D2291FA2D00789C54 /* snapStart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 763D9D8A2291FA2D00789C54 /* snapStart.wav */; };
+		763D9D8F2291FB8000789C54 /* snapEnd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 763D9D8E2291FB8000789C54 /* snapEnd.wav */; };
 		7647E2EA226E24C00047E42F /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647E2E9226E24C00047E42F /* Laser.swift */; };
 		7648C6BF2273B5AB00AEB3FC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7648C6BE2273B5AB00AEB3FC /* Colors.swift */; };
 		767E78CE2283381F006B09E7 /* piyu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 767E78CD2283381F006B09E7 /* piyu.wav */; };
@@ -64,6 +67,9 @@
 		7610D25F22636F1200240B51 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		7610D2612263760700240B51 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		76389D9B227FA81A006974C0 /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
+		763D9D892291FA2D00789C54 /* snapFail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snapFail.wav; sourceTree = "<group>"; };
+		763D9D8A2291FA2D00789C54 /* snapStart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snapStart.wav; sourceTree = "<group>"; };
+		763D9D8E2291FB8000789C54 /* snapEnd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snapEnd.wav; sourceTree = "<group>"; };
 		7647E2E9226E24C00047E42F /* Laser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		7648C6BE2273B5AB00AEB3FC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		767E78CD2283381F006B09E7 /* piyu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = piyu.wav; sourceTree = "<group>"; };
@@ -141,6 +147,9 @@
 		76E8875B2284E0570027140B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				763D9D892291FA2D00789C54 /* snapFail.wav */,
+				763D9D8E2291FB8000789C54 /* snapEnd.wav */,
+				763D9D8A2291FA2D00789C54 /* snapStart.wav */,
 				767E78D322834792006B09E7 /* bgmusic.mp3 */,
 				76E887572284DCD30027140B /* back.wav */,
 				767E78CD2283381F006B09E7 /* piyu.wav */,
@@ -282,13 +291,16 @@
 				7610D2462263664E00240B51 /* GameScene.sks in Resources */,
 				767E78CE2283381F006B09E7 /* piyu.wav in Resources */,
 				7610D2512263664F00240B51 /* Assets.xcassets in Resources */,
+				763D9D8C2291FA2D00789C54 /* snapFail.wav in Resources */,
 				7610D2542263664F00240B51 /* LaunchScreen.storyboard in Resources */,
 				7686D752226FB6E5006F0B2D /* mirror.fsh in Resources */,
 				7686D750226FAB55006F0B2D /* rainbow.fsh in Resources */,
+				763D9D8F2291FB8000789C54 /* snapEnd.wav in Resources */,
 				7610D2482263664E00240B51 /* Actions.sks in Resources */,
 				76B23B9C227F78B2008FA877 /* Audiowide-Regular.ttf in Resources */,
 				76D7F4D2227616E800C26758 /* MenuScene.sks in Resources */,
 				76FD947D2288720000EED04C /* CreditsScene.sks in Resources */,
+				763D9D8D2291FA2D00789C54 /* snapStart.wav in Resources */,
 				767E78D422834793006B09E7 /* bgmusic.mp3 in Resources */,
 				76E887582284DCD30027140B /* back.wav in Resources */,
 			);

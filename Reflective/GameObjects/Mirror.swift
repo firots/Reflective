@@ -203,6 +203,7 @@ class Mirror: SKNode {
         }
         snappedPos = snapPoint
         scene.draggingMirror = nil
+        Sound.play("snapEnd", scene: scene)
     }
     
     required init?(coder aDecoder: NSCoder) {
