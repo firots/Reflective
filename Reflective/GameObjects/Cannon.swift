@@ -103,7 +103,6 @@ class Cannon: SKNode {
         let rotation = (barrel.zRotation + distance / 300)
         if (rotation < .pi / 2 && rotation > -1.56 ) {
             barrel.zRotation = rotation
-            
         }
         drawGuide()
         rotating = touchPosition
