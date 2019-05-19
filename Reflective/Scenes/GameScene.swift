@@ -193,6 +193,13 @@ class GameScene: SKScene, HasSoundButtons {
                 hints.append(aimHint)
                 addChild(aimHint)
             }
+        } else if level == 4 {
+            let mirrorHint = Hint(animated: true, text: "<- reflect laser from all mirrors in correct order ->")
+            mirrorHint.label.preferredMaxLayoutWidth = size.width / 2
+            mirrorHint.label.numberOfLines = 3
+            mirrorHint.position = CGPoint(x: size.width / 2, y: size.height / 2)
+            hints.append(mirrorHint)
+            addChild(mirrorHint)
         } else if level == 3 {
             let mirrorHint = Hint(animated: true, text: "<- drag mirror in the bottom of screen to screen edges and reflect laser from it ->")
             mirrorHint.label.preferredMaxLayoutWidth = size.width / 2
