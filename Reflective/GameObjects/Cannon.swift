@@ -109,7 +109,6 @@ class Cannon: SKNode {
     }
     
 
-    
     func stopRotating() {
         guard let scene = scene as? GameScene else { return }
         rotating = nil
