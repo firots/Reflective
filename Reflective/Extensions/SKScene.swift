@@ -35,6 +35,7 @@ extension SKScene {
         background.blendMode = .replace
         background.zPosition = -1
         background.lightingBitMask = 1|2
+        background.setScale(GameScene.scale)
         addChild(background)
     }
 }
