@@ -43,7 +43,7 @@ class Ball: SKNode {
             light!.falloff = 0.1
             addChild(light!)
         }
-        setScale(GameScene.scale * 0.2)
+        setScale(GameScene.scale)
     }
     
     

@@ -31,7 +31,7 @@ extension SKScene {
     
     func addBackGround() {
         let background = SKSpriteNode(imageNamed: "sci_fi_bg1")
-        background.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        background.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 + 5)
         background.blendMode = .replace
         background.zPosition = -1
         background.lightingBitMask = 1|2

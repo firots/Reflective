@@ -276,7 +276,7 @@ class GameScene: SKScene, HasSoundButtons {
             let text = SKLabelNode(fontNamed: "Audiowide-Regular")
             text.horizontalAlignmentMode = .center
             text.verticalAlignmentMode = .center
-            text.fontSize = 100
+            text.fontSize = 20
             text.position = CGPoint(x:0, y: 0)
             text.zPosition = 11
             text.text = String(level)

@@ -378,7 +378,7 @@ struct Level {
              BlockData(SCPoint(x: 0.4, y: 0.5), [SnapDirection.left]),
              BlockData(SCPoint(x: 0.5, y: 0.5), [SnapDirection.top]),
              BlockData(SCPoint(x: 0.6, y: 0.5), [SnapDirection.right]),
-             BallData(SCPoint(x: 0.9, y: 0.65), Colors.magenta)]))
+             BallData(SCPoint(x: 0.9, y: 0.64), Colors.magenta)]))
         
         
 
