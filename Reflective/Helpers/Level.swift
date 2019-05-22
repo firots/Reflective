@@ -20,8 +20,8 @@ struct Level {
     static func fill() {
         Level.levels.append(Level(order: [UIColor]() , mirrors: [UIColor](), cannonColor: Colors.red, gameObjects: [BallData(SCPoint(x: 0.5, y: 0.8), Colors.yellow)]))
         
-        Level.levels.append(Level(order: [Colors.yellow], mirrors: [SKColor](), cannonColor: Colors.yellow,
-        gameObjects: [BallData(SCPoint(x: 0.5, y: 1.5), Colors.yellow)]))
+        Level.levels.append(Level(order: [Colors.red], mirrors: [SKColor](), cannonColor: Colors.red,
+        gameObjects: [BallData(SCPoint(x: 0.5, y: 1.4), Colors.red)]))
         
         Level.levels.append(Level(order: [Colors.red], mirrors: [SKColor](), cannonColor: Colors.red,
         gameObjects: [BlockData(SCPoint(x: 0.5, y: 0.8), [SnapDirection]()), BallData(SCPoint(x: 0.5, y: 1), Colors.red)]))

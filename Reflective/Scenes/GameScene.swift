@@ -16,6 +16,7 @@ class GameScene: SKScene, HasSoundButtons {
     var mirrors = [Mirror]()
     var hints = [Hint]()
     var blocks = [Block]()
+    static var marginBottom: CGFloat = 0
     var level: Int! {
         didSet {
             Level.currentLevel = level!
@@ -143,6 +144,7 @@ class GameScene: SKScene, HasSoundButtons {
     override func didMove(to view: SKView) {
         addBackGround()
         addMirrorCounter()
+        spawnFoundation()
         spawnCannon()
         spawnMirrors()
         addBackButton()
@@ -169,7 +171,7 @@ class GameScene: SKScene, HasSoundButtons {
         mirrorCounter = SKLabelNode(fontNamed: "Audiowide-Regular")
         mirrorCounter.horizontalAlignmentMode = .center
         mirrorCounter.fontSize = 24
-        mirrorCounter.position = CGPoint(x: Mirror.spawnPos.x - Mirror.size.width / 4, y: Mirror.spawnPos.y)
+        mirrorCounter.position = CGPoint(x: Mirror.spawnPos.x - Mirror.size.width / 4, y: Mirror.spawnPos.y + GameScene.marginBottom)
         mirrorCounter.isHidden = true
         addChild(mirrorCounter)
     }
@@ -177,15 +179,15 @@ class GameScene: SKScene, HasSoundButtons {
     func addHints() {
         if level == 1 {
             if let cannon = self.cannon {
-                let hint = Hint(animated: true, text: "tap cannon to fire")
-                hint.position = CGPoint(x: 0, y: Cannon.size.height)
+                let hint = Hint(animated: true, text: "tap me to fire")
+                hint.position = CGPoint(x: 0, y: 10)
                 hints.append(hint)
                 cannon.addChild(hint)
             }
         } else if level == 2 {
             if let cannon = self.cannon {
-                let dragHint = Hint(animated: true, text: "drag cannon to left or right")
-                dragHint.position = CGPoint(x: 0, y: Cannon.size.height)
+                let dragHint = Hint(animated: true, text: "drag me to left or right")
+                dragHint.position = CGPoint(x: 0, y: 10)
                 hints.append(dragHint)
                 cannon.addChild(dragHint)
             }
@@ -262,7 +264,7 @@ class GameScene: SKScene, HasSoundButtons {
     func spawnCannon() {
         cannon = Cannon()
         if let cannon = self.cannon {
-            cannon.position = CGPoint(x: self.size.width / 2, y: 0)
+            cannon.position = CGPoint(x: self.size.width / 2, y: 0 + GameScene.marginBottom)
             addChild(cannon)
             cannon.color = currentLevel().cannonColor
         }
@@ -286,7 +288,7 @@ class GameScene: SKScene, HasSoundButtons {
     }
     
     func createPos(from scalingPos: SCPoint) -> CGPoint {
-        return CGPoint(x: scalingPos.x * size.width, y: scalingPos.y * size.width)
+        return CGPoint(x: scalingPos.x * size.width, y: scalingPos.y * size.width + GameScene.marginBottom)
     }
     
     func spawnMirrors() {
@@ -294,7 +296,8 @@ class GameScene: SKScene, HasSoundButtons {
         for color in currentLevel().mirrors {
             let iMirror = Mirror()
             iMirror.position = Mirror.spawnPos
-            iMirror.zPosition = 11
+            iMirror.position.y += GameScene.marginBottom
+            iMirror.zPosition = 14
             iMirror.color = color
             addChild(iMirror)
             mirrors.append(iMirror)
@@ -311,6 +314,18 @@ class GameScene: SKScene, HasSoundButtons {
             }
         }
     }
+    
+    func spawnFoundation() {
+        var pos = CGPoint(x:0, y: -Block.size.height / 2 + GameScene.marginBottom)
+        for _ in 1...10 {
+            let block = Block()
+            block.position = pos
+            block.zPosition = 13
+            pos.x += Block.size.width
+            addChild(block)
+            blocks.append(block)
+        }
+    }
 
     func spawnBlock(blockData: BlockData) {
         let block = Block()
@@ -324,14 +339,6 @@ class GameScene: SKScene, HasSoundButtons {
         }
         for snapper in snapperData {
             block.addSnapper(at: snapper)
-        }
-        if Settings.shadows == true {
-            block.blockBase.shadowCastBitMask = 1
-            block.blockBase.lightingBitMask = 1|2
-            for snapper in block.snappers {
-                snapper.shadowCastBitMask = 0
-                snapper.lightingBitMask = 1|2
-            }
         }
         addChild(block)
         blocks.append(block)

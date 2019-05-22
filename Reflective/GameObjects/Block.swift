@@ -23,6 +23,11 @@ class Block: SKNode {
         blockBase.position = CGPoint(x: 0, y: 0)
         blockBase.zPosition = 1
         
+        if Settings.shadows == true {
+            blockBase.shadowCastBitMask = 1
+            blockBase.lightingBitMask = 1|2
+        }
+        
         super.init()
         self.name = "block"
         
@@ -41,6 +46,10 @@ class Block: SKNode {
         snapper.direction = direction
         snapper.position  = setSnapperLoc(for: direction)
         snappers.append(snapper)
+        if Settings.shadows == true {
+            snapper.shadowCastBitMask = 0
+            snapper.lightingBitMask = 1|2
+        }
         addChild(snapper)
     }
     

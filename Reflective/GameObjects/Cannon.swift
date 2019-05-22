@@ -35,14 +35,14 @@ class Cannon: SKNode {
         foundation.physicsBody?.isDynamic = false
         foundation.name = "foundation"
         foundation.position = CGPoint(x: 0, y: 0)
-        foundation.zPosition = 100
+        foundation.zPosition = 12
 
         barrel = SKSpriteNode(texture: nil, color: color, size: CGSize(width: 10, height: 40))
         barrel.physicsBody = SKPhysicsBody(rectangleOf: barrel.size)
         barrel.physicsBody?.isDynamic = false
         barrel.name = "foundation"
         barrel.position = CGPoint(x: 0, y: 20)
-        barrel.zPosition = 100
+        barrel.zPosition = 12
         
         super.init()
         self.name = "cannon"

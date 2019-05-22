@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
 
         if let view = self.view as! SKView? {
             setScaling(view: view)
+            setMarginBottom()
             if let scene = SKScene(fileNamed: "MenuScene") {
                 scene.size = view.frame.size
                 scene.scaleMode = .aspectFill
@@ -30,6 +31,36 @@ class GameViewController: UIViewController {
             if Settings.test == true {
                 //view.showsFPS = true
                 //view.showsNodeCount = true
+            }
+        }
+    }
+    
+    func setMarginBottom() {
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            /*case 1136:
+                //print("iPhone 5 or 5S or 5C")
+                
+            case 1334:
+                //print("iPhone 6/6S/7/8")
+                
+            case 1920, 2208:
+                //print("iPhone 6+/6S+/7+/8+")*/
+                
+            case 2436:
+                GameScene.marginBottom = 44
+                //print("iPhone X, XS")
+                
+            case 2688:
+                GameScene.marginBottom = 44
+                //print("iPhone XS Max")
+                
+            case 1792:
+                GameScene.marginBottom = 44
+                //print("iPhone XR")
+                
+            default: break
+                //print("Unknown")
             }
         }
     }
