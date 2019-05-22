@@ -119,6 +119,10 @@ class LevelSelectionScene: SKScene {
         block.name = String(level)
         block.blockBase.lightingBitMask = 0
         blocks.append(block)
+        if Settings.shadows == true {
+            block.blockBase.shadowCastBitMask = 0
+            block.blockBase.lightingBitMask = 0
+        }
         
         if (maxLevel + 1 >= level) {
             let text = SKLabelNode(fontNamed: "Audiowide-Regular")
