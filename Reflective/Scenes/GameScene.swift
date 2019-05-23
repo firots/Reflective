@@ -16,6 +16,7 @@ class GameScene: SKScene, HasSoundButtons {
     var mirrors = [Mirror]()
     var hints = [Hint]()
     var blocks = [Block]()
+    var foundationBlocks = [Block]()
     static var marginBottom: CGFloat = 0
     var level: Int! {
         didSet {
@@ -212,7 +213,9 @@ class GameScene: SKScene, HasSoundButtons {
             hints.append(mirrorHint)
             addChild(mirrorHint)
         } else if level == 6 {
+            print("a")
             if  !blocks.isEmpty {
+                print("b")
                 let block = blocks[0]
                 let snapHint = Hint(animated: true, text: "drag mirror to bottom of this box")
                 snapHint.position = CGPoint(x: 0, y: 0)
@@ -253,7 +256,7 @@ class GameScene: SKScene, HasSoundButtons {
             scene.size = size
             scene.scaleMode = .aspectFit
             scene.level = level
-            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: 1))
+            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: Settings.sceneChangeSpeed))
         }
     }
     
@@ -323,7 +326,7 @@ class GameScene: SKScene, HasSoundButtons {
             block.zPosition = 13
             pos.x += Block.size.width
             addChild(block)
-            blocks.append(block)
+            foundationBlocks.append(block)
         }
     }
 

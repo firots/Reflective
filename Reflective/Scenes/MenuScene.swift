@@ -80,7 +80,7 @@ class MenuScene: SKScene, HasSoundButtons {
             Sound.play("back.wav", scene: self)
             scene.size = size
             scene.scaleMode = .aspectFit
-            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: 1))
+            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: Settings.sceneChangeSpeed))
         }
     }
     
@@ -89,7 +89,7 @@ class MenuScene: SKScene, HasSoundButtons {
             Sound.play("back.wav", scene: self)
             scene.size = size
             scene.scaleMode = .aspectFit
-            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: 1))
+            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: Settings.sceneChangeSpeed))
         }
     }
     
@@ -100,7 +100,7 @@ class MenuScene: SKScene, HasSoundButtons {
             scene.size = size
             scene.scaleMode = .aspectFit
             scene.level = Level.currentLevel
-            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: 1))
+            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: Settings.sceneChangeSpeed))
         }
     }
 }

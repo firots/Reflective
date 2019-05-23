@@ -16,7 +16,7 @@ extension SKScene {
             Sound.play("back.wav", scene: scene)
             scene.size = size
             scene.scaleMode = .aspectFit
-            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: 1))
+            view!.presentScene(scene, transition: SKTransition.flipVertical(withDuration: Settings.sceneChangeSpeed))
         }
     }
     

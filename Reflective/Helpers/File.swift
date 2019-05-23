@@ -9,6 +9,7 @@
 import Foundation
 
 struct Settings {
+    static let sceneChangeSpeed: Double = 0.8
     static let shadows = true
     static var sound = true {
         didSet {
