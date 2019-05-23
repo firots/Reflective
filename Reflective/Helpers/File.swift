@@ -24,7 +24,7 @@ struct Settings {
         }
     }
     
-    static var test = true
+    static var test = false
     
     static func load() {
         let defaults = UserDefaults.standard

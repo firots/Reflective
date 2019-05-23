@@ -213,9 +213,7 @@ class GameScene: SKScene, HasSoundButtons {
             hints.append(mirrorHint)
             addChild(mirrorHint)
         } else if level == 6 {
-            print("a")
             if  !blocks.isEmpty {
-                print("b")
                 let block = blocks[0]
                 let snapHint = Hint(animated: true, text: "drag mirror to bottom of this box")
                 snapHint.position = CGPoint(x: 0, y: 0)
