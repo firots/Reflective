@@ -19,5 +19,7 @@ struct Colors {
     static let orange =  UIColor.orange
     static let red = UIColor.red
     static let white = UIColor.white
+    static let cyan = UIColor.cyan
+    static let clear = UIColor.clear
 
 }

@@ -343,6 +343,9 @@ class GameScene: SKScene, HasSoundButtons {
         for snapper in snapperData {
             block.addSnapper(at: snapper)
         }
+        if blockData.isVisible == false {
+            block.blockBase.color = Colors.clear
+        }
         addChild(block)
         blocks.append(block)
     }

@@ -160,7 +160,7 @@ class LevelSelectionScene: SKScene {
             nextButton.removeFromParent()
         }
         nextButtons.removeAll()
-        if page < Level.levels.count / 40 {
+        if page < (Level.levels.count - 2) / 40 {
             let backButton = SKLabelNode(fontNamed: "Audiowide-Regular")
             backButton.horizontalAlignmentMode = .center
             backButton.verticalAlignmentMode = .center
