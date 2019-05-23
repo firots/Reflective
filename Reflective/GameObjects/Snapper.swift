@@ -14,7 +14,7 @@ class Snapper: SKSpriteNode {
     static var size: CGSize!
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: nil, color: UIColor.darkGray, size: CGSize(width: 10, height: 10))
-        setScale(GameScene.scale)
+        //setScale(GameScene.scale)
     }
     
     required init?(coder aDecoder: NSCoder) {
