@@ -15,7 +15,6 @@ class Cannon: SKNode {
     var foundation: SKSpriteNode
     var light: SKLightNode?
     var barrel: SKSpriteNode
-    var charge = false
     var dragging = -1
     var rotating: CGPoint!
     var rotatingTime: TimeInterval!
@@ -60,7 +59,6 @@ class Cannon: SKNode {
     }
     
     func fire() {
-        charge = false
         Laser.bounced = 0
         guard let scene = scene as? GameScene else { return }
         let startPoint = CGPoint(x: position.x + barrel.position.x, y: position.y + barrel.position.y)

@@ -33,7 +33,7 @@ class Laser: SKNode {
         if self.isLaser == true {
             //base.strokeShader = Laser.shader
             base.strokeColor = color
-            let fade: SKAction = SKAction.fadeOut(withDuration: 1)
+            let fade: SKAction = SKAction.fadeOut(withDuration: 0.7)
             fade.timingMode = .easeIn
             let remove: SKAction = SKAction.run {
                 if let scene = self.scene as? GameScene {

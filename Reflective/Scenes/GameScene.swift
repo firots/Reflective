@@ -17,6 +17,7 @@ class GameScene: SKScene, HasSoundButtons {
     var hints = [Hint]()
     var blocks = [Block]()
     var foundationBlocks = [Block]()
+    var noFire = false
     static var marginBottom: CGFloat = 0
     var level: Int! {
         didSet {
@@ -46,6 +47,7 @@ class GameScene: SKScene, HasSoundButtons {
     var mirrorCounter: SKLabelNode!
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        noFire = false
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
         let tappedNodes = nodes(at: location)
@@ -80,6 +82,7 @@ class GameScene: SKScene, HasSoundButtons {
             let touchLocation = touch.location(in: self)
             if let node = self.draggingMirror {
                 node.position = touchLocation
+                noFire = true
             }
             else if let cannon = self.cannon {
                 if cannon.rotating != nil {
@@ -89,16 +92,18 @@ class GameScene: SKScene, HasSoundButtons {
                         cannon.position.x = touchLocation.x
                     }
                     cannon.dragging = 1
+                    noFire = true
                 }
             }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        noFire = false
         if let node = draggingMirror {
             let _ = node.beginSnap(at: node.position)
         }
-        if let cannon = cannon {
+        if let cannon = self.cannon {
             cannon.stopRotating()
             cannon.dragging = -1
         }
@@ -109,13 +114,9 @@ class GameScene: SKScene, HasSoundButtons {
         let viewLocation = recognizer.location(in: view)
         let location = convertPoint(fromView: viewLocation)
         let tappedNodes = nodes(at: location)
-        for node in tappedNodes {
-            if cannon!.isShooting() == false && won == false && cannon!.dragging < 1 {
+        if cannon!.isShooting() == false && won == false && cannon!.dragging < 1 {
+            for node in tappedNodes {
                 if  let _ = node as? Mirror { return }
-                if node.name == "cannon" {
-                    cannon?.fire()
-                    return
-                }
                 else if node.name == "back" {
                     mainMenu()
                     return
@@ -128,6 +129,11 @@ class GameScene: SKScene, HasSoundButtons {
                     toggleMusic(node)
                     return
                 }
+            }
+            if noFire == false {
+                cannon?.fire()
+            } else {
+                noFire = false
             }
         }
     }
@@ -179,18 +185,21 @@ class GameScene: SKScene, HasSoundButtons {
     
     func addHints() {
         if level == 1 {
-            if let cannon = self.cannon {
-                let hint = Hint(animated: true, text: "tap me to fire")
-                hint.position = CGPoint(x: 0, y: 10)
-                hints.append(hint)
-                cannon.addChild(hint)
-            }
+            let hint = Hint(animated: true, text: "one tap to fire")
+            hint.position = CGPoint(x: size.width / 2 , y: size.height / 2 )
+            hints.append(hint)
+            addChild(hint)
         } else if level == 2 {
             if let cannon = self.cannon {
                 let dragHint = Hint(animated: true, text: "drag me to left or right")
                 dragHint.position = CGPoint(x: 0, y: 10)
                 hints.append(dragHint)
                 cannon.addChild(dragHint)
+                
+                let hint = Hint(animated: true, text: "one tap to fire")
+                hint.position = CGPoint(x: size.width / 2 , y: size.height / 2 )
+                hints.append(hint)
+                addChild(hint)
             }
             if let ball = self.ball {
                 let aimHint = Hint(animated: true, text: "swipe right or left to aim")
