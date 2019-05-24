@@ -56,14 +56,14 @@ class Block: SKNode {
     func setSnapperLoc(for direction: SnapDirection) -> CGPoint {
         var pos: CGPoint!
         if (direction == SnapDirection.top) {
-            pos = CGPoint(x: 0, y: Block.size.height / 2)
-        } else if (direction == SnapDirection.bottom) {
-            pos = CGPoint(x: 0, y: Block.size.height / -2)
-        } else if (direction == SnapDirection.left) {
-            pos = CGPoint(x: Block.size.width / -2, y: 0)
-        } else  {
-            pos = CGPoint(x: Block.size.width / 2, y: 0)
-        }
+         pos = CGPoint(x: 0, y: 25)
+         } else if (direction == SnapDirection.bottom) {
+         pos = CGPoint(x: 0, y: -25)
+         } else if (direction == SnapDirection.left) {
+         pos = CGPoint(x: -25, y: 0)
+         } else  {
+         pos = CGPoint(x: 25, y: 0)
+         }
         return pos
     }
     

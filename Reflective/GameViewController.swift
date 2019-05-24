@@ -73,6 +73,7 @@ class GameViewController: UIViewController {
         Settings.load()
         Mirror.size = CGSize(width: cubeSize * 2 * scale, height: (cubeSize + 10) * scale)
         Block.size = CGSize(width: cubeSize * scale, height: cubeSize * scale)
+        Snapper.size = CGSize(width: 10 * scale, height: 10 * scale)
         Cannon.size = CGSize(width: 40 * scale, height: 60 * scale)
         Snapper.size = CGSize(width: 10 * scale, height: 10 * scale)
         var spawnPosX = view.frame.size.width
