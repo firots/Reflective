@@ -17,6 +17,15 @@ struct Level {
     var gameObjects = [GameObjectData]()
     static var currentLevel = 0
     
+    func getBallColor() -> UIColor? {
+        for obj in self.gameObjects {
+            if  let ball = obj as? BallData {
+                return ball.color
+            }
+        }
+        return nil
+    }
+    
     static func fill() {
         Level.levels.append(Level(order: [UIColor]() , mirrors: [UIColor](), cannonColor: Colors.red, gameObjects: [BallData(SCPoint(x: 0.5, y: 0.8), Colors.yellow)]))
         

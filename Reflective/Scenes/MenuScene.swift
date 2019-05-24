@@ -34,7 +34,11 @@ class MenuScene: SKScene, HasSoundButtons {
             light = SKLightNode()
             light.position = startButton.position
             light.categoryBitMask = 1
-            light.lightColor = UIColor.white
+            if let color = Level.levels[Level.currentLevel].getBallColor() {
+                light.lightColor = color
+            } else {
+                light.lightColor = UIColor.white
+            }
             light.falloff = 0.2
             addChild(light)
         }

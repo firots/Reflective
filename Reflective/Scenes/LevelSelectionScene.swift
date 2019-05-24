@@ -28,7 +28,11 @@ class LevelSelectionScene: SKScene {
             let light = SKLightNode()
             light.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
             light.categoryBitMask = 1
-            light.lightColor = UIColor.white
+            if let color = Level.levels[Level.currentLevel].getBallColor() {
+                light.lightColor = color
+            } else {
+                light.lightColor = UIColor.white
+            }
             light.falloff = 0.2
             addChild(light)
         }
