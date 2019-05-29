@@ -63,8 +63,14 @@ class GameScene: SKScene, HasSoundButtons {
                         return
                     }
                 } else if node.name == "cannon" {
-                    cannon!.dragging = 0
-                    return
+                    if let cannon = node as? Cannon {
+                        cannon.startPosition = touch.location(in: cannon)
+                        cannon.startPosition.x -= cannon.frame.size.width / 2
+                        cannon.startPosition.y -= cannon.frame.size.height / 2
+                        cannon.dragging = 0
+                        return
+                    }
+
                 }
             }
         }
@@ -91,8 +97,9 @@ class GameScene: SKScene, HasSoundButtons {
                 if cannon.rotating != nil {
                     cannon.rotate(to: touchLocation, at: touch.timestamp)
                 } else if cannon.dragging > -1 {
-                    if touchLocation.x > Cannon.size.width / 2 && touchLocation.x < self.size.width - Cannon.size.width / 2 && touchLocation.y < Cannon.size.height * 2 {
-                        cannon.position.x = touchLocation.x
+                    let newPosition = CGPoint(x: touchLocation.x - cannon.startPosition.x, y: touchLocation.y - cannon.startPosition.y)
+                    if newPosition.x > Cannon.size.width / 2 && newPosition.x < self.size.width - Cannon.size.width / 2 && newPosition.y < Cannon.size.height * 2 {
+                        cannon.position.x = newPosition.x
                     }
                     cannon.dragging = 1
                     noFire = true

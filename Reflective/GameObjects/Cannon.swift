@@ -15,9 +15,11 @@ class Cannon: SKNode {
     var foundation: SKSpriteNode
     var light: SKLightNode?
     var barrel: SKSpriteNode
+    var dragger: SKSpriteNode
     var dragging = -1
     var rotating: CGPoint!
     var rotatingTime: TimeInterval!
+    var startPosition = CGPoint.zero
     var color = Colors.red {
         didSet {
             foundation.color = color
@@ -35,6 +37,12 @@ class Cannon: SKNode {
         foundation.name = "foundation"
         foundation.position = CGPoint(x: 0, y: 0)
         foundation.zPosition = 12
+        
+        dragger = SKSpriteNode(texture: nil, color: color, size: CGSize(width: 180, height: 180))
+        dragger.name = "dragger"
+        dragger.position = CGPoint(x: 0, y: 0)
+        dragger.zPosition = 12
+        dragger.isHidden = true
 
         barrel = SKSpriteNode(texture: nil, color: color, size: CGSize(width: 10, height: 40))
         barrel.physicsBody = SKPhysicsBody(rectangleOf: barrel.size)
@@ -47,6 +55,7 @@ class Cannon: SKNode {
         self.name = "cannon"
         addChild(barrel)
         addChild(foundation)
+        addChild(dragger)
         
         if Settings.shadows == true {
             light = SKLightNode()
