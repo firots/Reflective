@@ -20,6 +20,7 @@ class Mirror: SKNode {
     var snappedPos: CGPoint?
     var light: SKLightNode?
     var reversed = false
+    var startPosition = CGPoint.zero
     let cubeSize = 50
     var color: SKColor! {
         didSet {
@@ -143,12 +144,12 @@ class Mirror: SKNode {
                         return false
                     }
                 }
-                if (position.x + Mirror.size.width / 2 > scene.size.width) {
+                if (position.x + Mirror.size.width  > scene.size.width) {
                     if (test == false) {
                         findSnapPos(at: CGPoint(x: scene.size.width - reflector.size.width / 2,  y: position.y), scene)
                     }
                     return true
-                } else if (position.x < Mirror.size.width / 2) {
+                } else if (position.x < Mirror.size.width ) {
                     if (test == false) {
                         findSnapPos(at: CGPoint(x: reflector.size.width / 2, y: position.y), scene)
                     }

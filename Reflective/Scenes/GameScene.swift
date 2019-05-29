@@ -57,6 +57,9 @@ class GameScene: SKScene, HasSoundButtons {
                     if let mirror = node as? Mirror {
                         Sound.play("snapStart", scene: scene)
                         draggingMirror = mirror
+                        mirror.startPosition = touch.location(in: mirror)
+                        mirror.startPosition.x -= mirror.frame.size.width / 2
+                        mirror.startPosition.y -= mirror.frame.size.height / 2
                         return
                     }
                 } else if node.name == "cannon" {
@@ -81,7 +84,7 @@ class GameScene: SKScene, HasSoundButtons {
         if let touch = touches.first {
             let touchLocation = touch.location(in: self)
             if let node = self.draggingMirror {
-                node.position = touchLocation
+                node.position = CGPoint(x: touchLocation.x - node.startPosition.x, y: touchLocation.y - node.startPosition.y)
                 noFire = true
             }
             else if let cannon = self.cannon {
