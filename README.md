@@ -1,2 +1,2 @@
 # Reflective
-basic IOS game made with SprikiteKit
+basic IOS game made with SpriteKit
